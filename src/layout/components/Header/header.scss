@@ -1,0 +1,75 @@
+@use '../../../scss/' as *;
+
+.header {
+    background: url(../../../assets/images/bg-header.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $header-height;
+    z-index: 99;
+    transition: height 0.3s ease;
+
+    .container {
+        height: 100%;
+    }
+
+    &__logo {
+        @include flex(center, center);
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+
+        a {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-35%);
+            img {
+                height: 150px;
+            }
+        }
+    }
+
+    &__menu {
+        @include flex(center, space-around);
+        height: 50%;
+        font-size: 1.5rem;
+        font-family: 'Roboto', sans-serif;
+
+        &__item {
+            font-weight: 600;
+            color: $txt-header-color;
+
+            &:hover {
+                text-shadow: 0 0 18px $txt-white;
+                filter: brightness(120%);
+            }
+
+            a {
+                @include flex(center, center);
+                img {
+                    width: 28px;
+                    margin-right: 5px;
+                    color: $txt-header-color;
+                }
+            }
+        }
+
+        &__item ~ &__item {
+            margin-left: 60px;
+        }
+
+        &__left,
+        &__right {
+            @include flex(center, space-between);
+            height: 100%;
+        }
+
+        &__right__wrapper {
+            @include flex(center, space-between);
+        }
+    }
+}

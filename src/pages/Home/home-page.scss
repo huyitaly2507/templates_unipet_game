@@ -1,0 +1,21 @@
+@use '../../scss/' as *;
+
+.home-page {
+    position: absolute;
+    top: $header-height;
+    width: 100%;
+    @include flex(center, center);
+    flex-direction: column;
+
+    &__nav {
+        @include flex(center, space-evenly);
+        width: 65%;
+        height: 80px;
+        margin-top: 20px;
+    }
+
+    &__content {
+        width: 65%;
+        margin-top: 30px;
+    }
+}

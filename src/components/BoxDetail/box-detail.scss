@@ -1,0 +1,150 @@
+@use '../../scss/' as *;
+
+.box-detail {
+    @include flex(flex-start, space-evenly);
+
+    &__left {
+        width: 35%;
+        &__item {
+            width: 100%;
+
+            &__title {
+                color: $txt-white;
+                font-size: 2rem;
+                margin-top: 10px;
+                text-shadow: $text-shadow;
+            }
+
+            &__order {
+                margin-top: 8px;
+                color: $txt-yellow;
+                font-family: 'Roboto', sans-serif;
+                font-size: 1.6rem;
+                font-weight: 600;
+            }
+
+            &__img {
+                background: url(../../assets/images/box.png) no-repeat center/contain;
+                width: 100%;
+                padding-top: 100%;
+            }
+        }
+    }
+
+    &__right {
+        width: 65%;
+
+        &__item {
+            position: relative;
+            background: url(../../assets/images/box_info.png) no-repeat center/contain;
+            padding-top: 75%;
+
+            &__content {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 100%;
+                height: 100%;
+                @include flex(center, center);
+                flex-direction: column;
+
+                &__buy,
+                &__detail,
+                &__about {
+                    width: 100%;
+                }
+
+                &__buy {
+                    @include flex(center, space-around);
+                    height: 25%;
+
+                    .buy__price {
+                        &__title {
+                            font-size: 1.6rem;
+                            // background: -webkit-linear-gradient(#fff, #37c0ee);
+                            // -webkit-background-clip: text;
+                            // -webkit-text-fill-color: transparent;
+                            color: white;
+                            text-shadow: $text-shadow;
+                        }
+
+                        &__number {
+                            @include flex(center, center);
+                            span {
+                                font-size: 2rem;
+                                color: $txt-yellow;
+                                margin-right: 5px;
+                            }
+                            img {
+                                width: 30px;
+                            }
+                        }
+                    }
+
+                    .btn_buy {
+                        font-size: 1.6rem;
+                        color: $txt-white;
+                        text-shadow: $text-shadow;
+                        span {
+                            position: relative;
+                            top: -2px;
+                            letter-spacing: 2px;
+                        }
+                    }
+                }
+
+                &__detail,
+                &__about {
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+
+                    .detail__title {
+                        @include flex(center, flex-start);
+                        width: 70%;
+                        margin-bottom: 10px;
+
+                        img {
+                            margin-right: 8px;
+                            width: 10px;
+                        }
+
+                        span {
+                            font-size: 2rem;
+                            color: white;
+                            text-shadow: $text-shadow;
+                        }
+                    }
+
+                    .detail__content {
+                        @include flex(space-around, space-between);
+                        width: 65%;
+                        color: white;
+                        font-family: 'Roboto', sans-serif;
+
+                        &__title {
+                            font-size: 1.6rem;
+                            font-weight: 600;
+                        }
+
+                        &__desc {
+                            font-size: 1.2rem;
+                            font-weight: 500;
+                            padding: 5px 0;
+
+                            &.yellow {
+                                color: $txt-yellow;
+                            }
+                        }
+                    }
+                }
+
+                &__detail,
+                &__about {
+                    height: calc(75% / 2);
+                }
+            }
+        }
+    }
+}
